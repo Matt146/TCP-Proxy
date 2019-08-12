@@ -23,6 +23,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>
 package main
 
 import (
+    "fmt"
     "net"
     "log"
     "os"
@@ -67,14 +68,17 @@ func PrintWelcomeMessage() {
    ██║   ╚██████╗██║         ██║     ██║  ██║╚██████╔╝██╔╝ ██╗   ██║   
    ╚═╝    ╚═════╝╚═╝         ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝ 
 `)
-	fmt.Println("FAQ:")
-	fmt.Println("Q1. Does it use SSL?")
-	fmt.Println("\tA1: No, the current version does not")
-	fmt.Println("How is it licensed?")
-	fmt.Println("\tA2: GNU GPL V. 3")
+	fmt.Println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+	fmt.Println("\t\t\tFAQ:")
+	fmt.Println("\t\tQ1. Does it use SSL?")
+	fmt.Println("\t\t\tA1: No, the current version does not")
+	fmt.Println("\t\tQ2.How is it licensed?")
+	fmt.Println("\t\t\tA2: GNU GPL V. 3")
+	fmt.Println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 }
 
 func main() {
+    PrintWelcomeMessage()
     if len(os.Args) == 2 {
         forwardTo := os.Args[1]
         listener, err := net.Listen("tcp", PORT)
